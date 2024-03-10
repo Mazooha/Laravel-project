@@ -18,9 +18,19 @@ Route::get('/', \App\Http\Controllers\Main\IndexController::class)->name('main.i
 Route::group(['prefix'=> 'pages'], function () {
   Route::get('/', \App\Http\Controllers\Page\IndexController::class)->name('page.index');
   Route::get('/create', \App\Http\Controllers\Page\CreateController::class)->name('page.create');
-  Route::post('/', \App\Http\Controllers\Page\StoreController::class)->name('paage.store');
+  Route::post('/', \App\Http\Controllers\Page\StoreController::class)->name('page.store');
   Route::get('/{page}/edit', \App\Http\Controllers\Page\EditController::class)->name('page.edit');
   Route::get('/{page}', \App\Http\Controllers\Page\ShowController::class)->name('page.show');
   Route::patch('/{page}', \App\Http\Controllers\Page\UpdateController::class)->name('page.update');
   Route::delete('/{page}', \App\Http\Controllers\Page\DeleteController::class)->name('page.delete');
+});
+
+Route::group(['prefix'=> 'news'], function () {
+  Route::get('/', \App\Http\Controllers\News\IndexController::class)->name('news.index');
+  Route::get('/create', \App\Http\Controllers\News\CreateController::class)->name('news.create');
+  Route::post('/', \App\Http\Controllers\News\StoreController::class)->name('news.store');
+  Route::get('/{news}/edit', \App\Http\Controllers\News\EditController::class)->name('news.edit');
+  Route::get('/{news}', \App\Http\Controllers\News\ShowController::class)->name('news.show');
+  Route::patch('/{news}', \App\Http\Controllers\News\UpdateController::class)->name('news.update');
+  Route::delete('/{news}', \App\Http\Controllers\News\DeleteController::class)->name('news.delete');
 });

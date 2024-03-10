@@ -23,7 +23,16 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          
+          <form action="{{ route('page.store') }}" method="post">
+            @csrf
+
+            <div class="form-group">
+              <input type="text" name="page_name" class="form-controller" placeholder="Наименование">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Добавить">
+            </div>
+          </form>
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
