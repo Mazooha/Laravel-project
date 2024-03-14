@@ -34,3 +34,13 @@ Route::group(['prefix'=> 'news'], function () {
   Route::patch('/{news}', \App\Http\Controllers\News\UpdateController::class)->name('news.update');
   Route::delete('/{news}', \App\Http\Controllers\News\DeleteController::class)->name('news.delete');
 });
+
+Route::group(['prefix'=> 'files'], function () {
+  Route::get('/', \App\Http\Controllers\File\IndexController::class)->name('file.index');
+  Route::get('/create', \App\Http\Controllers\File\CreateController::class)->name('file.create');
+  Route::post('/', \App\Http\Controllers\File\StoreController::class)->name('file.store');
+  Route::get('/{file}/edit', \App\Http\Controllers\File\EditController::class)->name('file.edit');
+  Route::get('/{file}', \App\Http\Controllers\File\ShowController::class)->name('file.show');
+  Route::patch('/{file}', \App\Http\Controllers\File\UpdateController::class)->name('file.update');
+  Route::delete('/{file}', \App\Http\Controllers\File\DeleteController::class)->name('file.delete');
+});

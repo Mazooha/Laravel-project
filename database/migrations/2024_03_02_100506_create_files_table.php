@@ -15,11 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('file_name');
             $table->string('file_path');
-            $table->unsignedBigInteger('page_id');
+            $table->foreignId('page_id')->nullable()->index()->constrained('pages');
+            // $table->unsignedBigInteger('page_id');
             $table->timestamps();
 
-            $table->index('page_id', 'file_page_idx');
-            $table->foreign('page_id', 'file_page_fk')->on('pages')->references('id');
+            // $table->index('page_id', 'file_page_idx');
+            // $table->foreign('page_id', 'file_page_fk')->on('pages')->references('id');
         });
     }
 
