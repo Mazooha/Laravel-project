@@ -131,7 +131,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="/" class="brand-link">
       <span class="brand-text font-weight-light">Сервер GbZlat</span>
     </a>
 
@@ -201,8 +201,11 @@
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 <!-- Summernote -->
 <script src="{{ asset('adminlte/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- bs-custom-file-input -->
+<script src="{{ asset('adminlte/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+  bsCustomFileInput.init();
   $('.pages').select2();
   $('#summernote').summernote({
     toolbar: [

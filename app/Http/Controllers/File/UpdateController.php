@@ -5,7 +5,6 @@ namespace App\Http\Controllers\File;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\File\UpdateRequest;
 use App\Models\File;
-use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {

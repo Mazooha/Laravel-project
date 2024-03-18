@@ -23,11 +23,14 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <form action="{{ route('file.update', $file->id) }}" method="post">
+          <form class="w-25" action="{{ route('file.update', $file->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('patch')
             <div class="form-group">
               <input type="text" name="file_name" class="form-controller" value="{{ $file->file_name }}" placeholder="Наименование">
+              @error('file_name')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
 
             <div class="form-group">
@@ -44,12 +47,14 @@
 
             <div class="form-group">
               <select class="form-control pages" name="page_id" style="width: 100%;">
-                <!-- <option selected="selected" disabled>{{ $page->page_name }}</option> -->
+                <option selected="selected" disabled>Выберите страницу</option>
                 @foreach ($pages as $page)
-                    <option value="{{ $page->id }}">{{ $page->page_name }}</option>
+                    <option value="{{ $page->id }}" {{ $page->id == $file->page_id ? 'selected' : '' }}>{{ $page->page_name }}</option>
                 @endforeach
               </select>
-              
+              @error('page_id')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
 
             <div class="form-group">

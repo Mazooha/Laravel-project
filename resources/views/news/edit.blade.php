@@ -29,6 +29,9 @@
             
             <div class="form-group">
               <textarea name="content" id="summernote" >{{ $news->content }}</textarea>
+              @error('content')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Редактировать">

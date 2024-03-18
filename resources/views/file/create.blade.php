@@ -27,7 +27,10 @@
             @csrf
 
             <div class="form-group">
-              <input type="text" name="file_name" class="form-controller" placeholder="Наименование">
+              <input type="text" name="file_name" class="form-controller" placeholder="Наименование" value="{{ old('file_name') }}">
+              @error('file_name')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
 
             <div class="form-group">
@@ -36,20 +39,25 @@
                   <input type="file" name="file_path" class="custom-file-input" id="exampleInputFile">
                   <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
                 </div>
-                <div class="input-group-append">
+                {{-- <div class="input-group-append">
                   <span class="input-group-text">Загрузить</span>
-                </div>
+                </div> --}}
               </div>
+              @error('file_path')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
 
             <div class="form-group">
               <select class="form-control pages" name="page_id" style="width: 100%;">
                 <option selected="selected" disabled>Выберите страницу</option>
                 @foreach ($pages as $page)
-                    <option value="{{ $page->id }}">{{ $page->page_name }}</option>
+                    <option value="{{ $page->id }}" {{ $page->id == old('page_id') ? 'selected' : '' }}>{{ $page->page_name }}</option>
                 @endforeach
               </select>
-              
+              {{-- @error('page_id')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror --}}
             </div>
 
             <div class="form-group">

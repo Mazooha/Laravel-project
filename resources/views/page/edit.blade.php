@@ -28,6 +28,9 @@
             @method('patch')
             <div class="form-group">
               <input type="text" name="page_name" value="{{ $page->page_name }}" class="form-controller" placeholder="Наименование">
+              @error('page_name')
+                  <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Редактировать">
