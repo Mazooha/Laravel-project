@@ -23,7 +23,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'file_name' => 'required|string',
-            'file_path' => 'required|',
+            'file_path' => 'required',
             'page_id' => 'required|integer',
         ];
     }

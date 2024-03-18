@@ -34,7 +34,8 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Наименование</th>
+                      <th>Наименование документа</th>
+                      <th>На странице</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -42,6 +43,7 @@
                     <tr>
                       <td>{{ $file->id }}</td>
                       <td><a href="{{ route('file.show', $file->id) }}">{{ $file->file_name }}</a></td>
+                      <td>{{ $file->page_id }}</td>
                     </tr>
                     @endforeach
                   </tbody>

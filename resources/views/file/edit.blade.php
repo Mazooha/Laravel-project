@@ -27,10 +27,33 @@
             @csrf
             @method('patch')
             <div class="form-group">
-              <input type="text" name="page_name" value="{{ $page->page_name }}" class="form-controller" placeholder="Наименование">
+              <input type="text" name="file_name" class="form-controller" value="{{ $file->file_name }}" placeholder="Наименование">
             </div>
+
             <div class="form-group">
-              <input type="submit" class="btn btn-primary" value="Редактировать">
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" name="file_path" class="custom-file-input" id="exampleInputFile">
+                  <label class="custom-file-label" for="exampleInputFile">Выберите файл для замены</label>
+                </div>
+                <!-- <div class="input-group-append">
+                  <span class="input-group-text">Загрузить</span>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control pages" name="page_id" style="width: 100%;">
+                <!-- <option selected="selected" disabled>{{ $page->page_name }}</option> -->
+                @foreach ($pages as $page)
+                    <option value="{{ $page->id }}">{{ $page->page_name }}</option>
+                @endforeach
+              </select>
+              
+            </div>
+
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Добавить">
             </div>
           </form>
         </div>

@@ -23,11 +23,11 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <form action="{{ route('news.store') }}" method="post">
+          <form action="{{ route('news.store') }}" method="post" class="w-100">
             @csrf
 
             <div class="form-group">
-              <input type="text" name="content" class="form-controller" placeholder="Введите новость">
+              <textarea name="content" id="summernote"></textarea>
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Добавить">

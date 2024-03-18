@@ -26,8 +26,9 @@
           <form action="{{ route('news.update', $news->id) }}" method="post">
             @csrf
             @method('patch')
+            
             <div class="form-group">
-              <input type="text" name="content" value="{{ $news->content }}" class="form-controller" placeholder="Введите новость">
+              <textarea name="content" id="summernote" >{{ $news->content }}</textarea>
             </div>
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Редактировать">
