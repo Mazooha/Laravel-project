@@ -39,9 +39,6 @@
                   <input type="file" name="file_path" class="custom-file-input" id="exampleInputFile">
                   <label class="custom-file-label" for="exampleInputFile">Выберите файл</label>
                 </div>
-                {{-- <div class="input-group-append">
-                  <span class="input-group-text">Загрузить</span>
-                </div> --}}
               </div>
               @error('file_path')
                   <div class="text-danger">Это поле необходимо для заполнения</div>
@@ -55,14 +52,17 @@
                     <option value="{{ $page->id }}" {{ $page->id == old('page_id') ? 'selected' : '' }}>{{ $page->page_name }}</option>
                 @endforeach
               </select>
-              {{-- @error('page_id')
+              @error('page_id')
                   <div class="text-danger">Это поле необходимо для заполнения</div>
-              @enderror --}}
+              @enderror
             </div>
 
             <div class="form-group">
               <input type="submit" class="btn btn-primary" value="Добавить">
             </div>
+            @foreach ($errors->all() as $error)
+              {{ $error }}<br/>
+            @endforeach
           </form>
         </div>
         <!-- /.row -->
