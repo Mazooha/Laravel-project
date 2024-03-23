@@ -49,6 +49,10 @@
                       <td>Наименование</td>
                       <td>{{ $file->file_name }}</td>
                     </tr>
+                    <tr>
+                      <td>Страница</td>
+                      <td>{{ $page = File::find($file->page_id)->page_name }}</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>

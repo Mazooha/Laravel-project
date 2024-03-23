@@ -11,4 +11,8 @@ class File extends Model
 
     protected $table = 'files';
     protected $guarded = false;
+
+    public function page(){
+        return $this->belongsTo(Page::class, 'page_id', 'id');
+    }
 }

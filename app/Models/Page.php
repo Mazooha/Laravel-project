@@ -11,4 +11,8 @@ class Page extends Model
 
     protected $table = 'pages';
     protected $guarded = false;
+
+    public function files(){
+        return $this->hasMany(File::class, 'page_id','id');
+    }
 }
