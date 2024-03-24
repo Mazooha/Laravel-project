@@ -11,6 +11,9 @@ class UpdateController extends Controller
     public function __invoke(UpdateRequest $request, File $file){
         $data = $request->validated();
         $file->update($data);
-        return view("file.show", compact("file"));
+        $files = File::find($file->id);
+        $page = $files->page->page_name;
+        
+        return view("file.show", compact("file", "page"));
     }
 }

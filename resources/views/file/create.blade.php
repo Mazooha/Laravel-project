@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <form action="{{ route('file.store') }}" method="post" enctype="multipart/form-data">
+          <form class="w-25" action="{{ route('file.store') }}" method="post" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">

@@ -39,9 +39,6 @@
                   <input type="file" name="file_path" class="custom-file-input" id="exampleInputFile">
                   <label class="custom-file-label" for="exampleInputFile">Выберите файл для замены</label>
                 </div>
-                <!-- <div class="input-group-append">
-                  <span class="input-group-text">Загрузить</span>
-                </div> -->
               </div>
             </div>
 

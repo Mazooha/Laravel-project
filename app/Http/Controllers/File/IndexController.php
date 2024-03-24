@@ -11,6 +11,7 @@ class IndexController extends Controller
     public function __invoke(){
         $files = File::all();
         $pages = Page::all();
+        
         return view("file.index", compact("files", "pages"));
     }
 }

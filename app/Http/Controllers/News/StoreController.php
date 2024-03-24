@@ -5,7 +5,6 @@ namespace App\Http\Controllers\News;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\News\StoreRequest;
 use App\Models\News;
-use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {

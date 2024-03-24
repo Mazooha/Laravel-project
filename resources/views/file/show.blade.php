@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-12">
+          <div class="col-6">
             <div class="card">
               <div class="card-header d-flex p-3">
                 <div class="mr-3">
@@ -36,7 +36,7 @@
                 </form>
                 
               </div>
-            
+              
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                   
@@ -51,7 +51,7 @@
                     </tr>
                     <tr>
                       <td>Страница</td>
-                      <td>{{ $page = File::find($file->page_id)->page_name }}</td>
+                      <td>{{ $page }}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -59,6 +59,14 @@
             
             </div>
             
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header p-3">Предпросмотр документа</div>
+              <div class="card-body">
+                <iframe height="100%" width=100% src='{{ asset("storage/" . $file->file_path) }}'></iframe>
+              </div>
+            </div>
           </div>
         </div>
         <!-- /.row -->

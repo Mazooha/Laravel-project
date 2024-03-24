@@ -10,6 +10,7 @@ class EditController extends Controller
 {
     public function __invoke(File $file){
         $pages = Page::all();
+        
         return view("file.edit", compact("file", "pages"));
     }
 }
